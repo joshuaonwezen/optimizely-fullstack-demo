@@ -1,11 +1,13 @@
+import { Grid, Item } from "@mui/material";
 import type { NextPage } from "next";
 import Head from "next/head";
-import styles from "../styles/Home.module.css";
+import Article from "../components/article/article";
+import List from "../components/list/list";
 import Navigation from "../components/navigation/navigation";
 
 const Home: NextPage = () => {
     return (
-        <div className={styles.container}>
+        <div>
             <Head>
                 <title>FS Demo - Optimizely</title>
                 <meta
@@ -15,7 +17,16 @@ const Home: NextPage = () => {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
 
-            <Navigation/>
+            <Navigation />
+
+            <Grid container padding={4} spacing={2}>
+                <Grid item xs={8}>
+                    <Article/>
+                </Grid>
+                <Grid item xs={4}>
+                    <List/>
+                </Grid>
+            </Grid>
         </div>
     );
 };
